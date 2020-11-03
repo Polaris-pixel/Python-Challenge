@@ -30,6 +30,8 @@ with open (file_path, 'r') as storagefile:
         
 avg_profit = profit/count_row 
 
+
+# change is (2nd month - 1st month) and so on. 1st month is skipped
 change_list.pop(0)
 
 avg_change = sum (change_list)/len(change_list)
@@ -38,6 +40,7 @@ greatest_profit = max(change_list)
 
 least_profit = min(change_list)
 
+# +1 to take into account (index match) the 1st month skipped in line35
 month_greatest_index= change_list.index(max(change_list))+1
 
 month_least_index = change_list.index(min(change_list))+1
