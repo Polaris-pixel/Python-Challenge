@@ -45,9 +45,9 @@ print(percentage_votes)
 #   Winner: Khan
 #   -------------------------
 print ("Election Results")
-print ("--------------------")
+print ("------------------------------")
 print (f"Total Votes: {total_votes:0,.0f}")
-print ("--------------------")
+print ("-------------------------------")
 
 output_path = os.path.join("Analysis", "Summary_PyPoll.txt")
 
@@ -55,21 +55,21 @@ output_path = os.path.join("Analysis", "Summary_PyPoll.txt")
 with open(output_path, 'w') as pollfile: 
       
     pollfile.write('Election Results \n')    
-    pollfile.write('------------------------- \n')
+    pollfile.write('---------------------------------------- \n')
     pollfile.write(f"Total votes : {total_votes:0,.0f}  \n" )
-    
+    pollfile.write('---------------------------------------- \n')
     for x in candidates:
         ind = candidates.index(x)
         votes = candidates_votes[ind]
         print ((x) + ": " + str("{:0,.3f}".format(percentage_votes[ind]))+f"% ({votes:0,.0f})")
         pollfile.write((x) +": " + str("{:0,.3f}".format(percentage_votes[ind]))+f"% ({votes:0,.0f})\n")
-    pollfile.write("------------------------- \n")
+    pollfile.write("--------------------------------------- \n")
     pollfile.write(f"Winner: {candidates[candidates_votes.index(max(candidates_votes))]} \n")
-    pollfile.write("-------------------------")
+    pollfile.write("----------------------------------------")
 
-print ("--------------------")
+print ("--------------------------------")
 print (f"Winner: {candidates[candidates_votes.index(max(candidates_votes))]}")   
-print ("--------------------")
+print ("-------------------------------")
 
 
 
