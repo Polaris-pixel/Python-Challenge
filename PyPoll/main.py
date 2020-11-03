@@ -56,13 +56,13 @@ with open(output_path, 'w') as pollfile:
       
     pollfile.write('Election Results \n')    
     pollfile.write('---------------------------------------- \n')
-    pollfile.write(f"Total votes : {total_votes:0,.0f}  \n" )
+    pollfile.write(f"Total votes :  {total_votes:0,.0f}  \n" )
     pollfile.write('---------------------------------------- \n')
     for x in candidates:
         ind = candidates.index(x)
         votes = candidates_votes[ind]
-        print ((x) + ": " + str("{:0,.3f}".format(percentage_votes[ind]))+f"% ({votes:0,.0f})")
-        pollfile.write((x) +": " + str("{:0,.3f}".format(percentage_votes[ind]))+f"% ({votes:0,.0f})\n")
+        print (f"{(x)} : {(percentage_votes[ind]):0,.3f}% ({votes:0,.0f})")
+        pollfile.write(f"{(x)} :  {(percentage_votes[ind]):0,.3f}%  ({votes:0,.0f}) \n")
     pollfile.write("--------------------------------------- \n")
     pollfile.write(f"Winner: {candidates[candidates_votes.index(max(candidates_votes))]} \n")
     pollfile.write("----------------------------------------")
